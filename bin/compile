@@ -11,8 +11,6 @@ message() {
   echo "-----> $*"
 }
 
-BUNDLE=/usr/local/bin/bundle
-
 -# Install Jekyll into $CACHE_DIR/.gems
 cat << EOF > ~/.gemrc
 gemhome: $CACHE_DIR/gems
@@ -27,11 +25,10 @@ message "Installing bundler"
 /usr/local/bin/gem install bundler
 
 
-
 cd $BUILD_DIR
 
 message "Installing bundle"
-$BUNDLE install
+bundle install
 
 message "Compiling Jekyll site"
-$BUNDLE exec jekyll public --no-auto --no-server | indent
+bundle exec jekyll public --no-auto --no-server | indent
