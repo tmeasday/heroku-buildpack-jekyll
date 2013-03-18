@@ -1,5 +1,8 @@
 #!/bin/sh
 
+BUILD_DIR=$1
+CACHE_DIR=$2
+
 indent() {
   sed -u 's/^/       /'
 }
@@ -9,8 +12,6 @@ message() {
 }
 
 BUNDLE=/usr/local/bin/bundle
-
-cd $1
 
 -# Install Jekyll into $CACHE_DIR/.gems
 cat << EOF > ~/.gemrc
@@ -24,6 +25,10 @@ export LC_ALL=en_US.UTF8
 
 message "Installing bundler"
 /usr/local/bin/gem install bundler
+
+
+
+cd $BUILD_DIR
 
 message "Installing bundle"
 $BUNDLE install
