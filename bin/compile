@@ -11,22 +11,19 @@ message() {
   echo "-----> $*"
 }
 
--# Install Jekyll into $CACHE_DIR/.gems
+# Install Jekyll into $CACHE_DIR/.gems
 cat << EOF > ~/.gemrc
 gemhome: $CACHE_DIR/gems
 gempath:
 - $CACHE_DIR/gems
 EOF
 
-export PATH=$CACHE_DIR/gems/bin:$PATH
+export GEM_HOME=$CACHE_DIR/gems
+export PATH=$GEM_HOME/bin:$PATH
 export LC_ALL=en_US.UTF8
 
 message "Installing bundler"
 /usr/local/bin/gem install bundler
-
-which bundle
-bundle
-
 
 ls -l $CACHE_DIR/gems/bin
 
