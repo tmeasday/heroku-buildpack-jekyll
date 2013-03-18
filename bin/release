@@ -5,5 +5,5 @@ cat << EOF
 addons:
 config_vars:
 default_process_types:
-  web: GEM_HOME=gems gems/bin/thin start -p $PORT -e $RACK_ENV
+  web: GEM_HOME=/app/gems /app/gems/bin/thin start -p $PORT -e $RACK_ENV
 EOF
