@@ -8,10 +8,12 @@ message() {
   echo "-----> $*"
 }
 
+BUNDLE=/usr/local/bin/bundle
+
 cd $1
 
 message "Installing bundle"
-bundle install
+$BUNDLE install
 
 message "Compiling Jekyll site"
-bundle exec jekyll public --no-auto --no-server | indent
+$BUNDLE exec jekyll public --no-auto --no-server | indent
