@@ -15,10 +15,10 @@ message() {
 cat << EOF > ~/.gemrc
 gemhome: $CACHE_DIR/gems
 gempath:
-- $CACHE_DIR/gems/bin
+- $CACHE_DIR/gems
 EOF
 
-export PATH=$CACHE_DIR/gems:$PATH
+export PATH=$CACHE_DIR/gems/bin:$PATH
 export LC_ALL=en_US.UTF8
 
 message "Installing bundler"
