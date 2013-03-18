@@ -5,5 +5,5 @@ cat << EOF
 addons:
 config_vars:
 default_process_types:
-  web: bundle exec thin start -p $PORT -e $RACK_ENV
+  web: GEM_HOME=gems gems/bin/thin start -p $PORT -e $RACK_ENV
 EOF

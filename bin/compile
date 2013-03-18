@@ -32,5 +32,8 @@ cd $BUILD_DIR
 message "Installing bundle"
 bundle install
 
+message "Vendoring bundle into build"
+cp -r $GEM_DIR $BUILD_DIR/gems
+
 message "Compiling Jekyll site"
 bundle exec jekyll public --no-auto --no-server | indent
