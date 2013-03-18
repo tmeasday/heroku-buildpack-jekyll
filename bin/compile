@@ -12,6 +12,8 @@ BUNDLE=/usr/local/bin/bundle
 
 cd $1
 
+export LC_ALL=en_US.UTF8
+
 message "Installing bundler"
 /usr/local/bin/gem install bundler
 
