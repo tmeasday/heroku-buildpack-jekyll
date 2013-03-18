@@ -12,6 +12,11 @@ BUNDLE=/usr/local/bin/bundle
 
 cd $1
 
+message "Installing bundler"
+/usr/local/bin/gem install bundler
+
+ls -l /usr/local/bin/
+
 message "Installing bundle"
 $BUNDLE install
 
