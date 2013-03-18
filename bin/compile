@@ -12,12 +12,18 @@ BUNDLE=/usr/local/bin/bundle
 
 cd $1
 
+-# Install Jekyll into $CACHE_DIR/.gems
+cat << EOF > ~/.gemrc
+gemhome: $CACHE_DIR/gems
+gempath:
+- $CACHE_DIR/gems
+EOF
+
+export PATH=$CACHE_DIR/gems:$PATH
 export LC_ALL=en_US.UTF8
 
 message "Installing bundler"
 /usr/local/bin/gem install bundler
-
-ls -l /usr/local/bin/
 
 message "Installing bundle"
 $BUNDLE install
