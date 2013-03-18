@@ -33,7 +33,7 @@ message "Installing bundle"
 bundle install
 
 message "Vendoring bundle into build"
-cp -r $GEM_DIR $BUILD_DIR/gems
+cp -r $GEM_HOME $BUILD_DIR/gems
 
 message "Compiling Jekyll site"
 bundle exec jekyll public --no-auto --no-server | indent
